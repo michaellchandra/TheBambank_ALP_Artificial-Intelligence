@@ -6,6 +6,7 @@ app = Flask("ALP_AI")
 
 from flask import render_template
 
+#App Route
 @app.route("/")
 def home():
     return render_template(
@@ -13,12 +14,4 @@ def home():
         name = "Home - The Bambank Color Palette"
     )
 
-@app.route("/hello/")
-@app.route("/hello/<name>")
-def hello_there(name = None):
-    return render_template(
-        "welcome.html",
-        name=name,
-    )
 
-cmap = ListedColormap(palettable.colorbrewer.qualitative.Dark2_7.mpl_colors)
